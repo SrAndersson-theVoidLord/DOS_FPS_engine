@@ -1,36 +1,4 @@
 /*
-	OneLoneCoder.com - Command Line First Person Shooter (FPS) Engine
-	"Why were games not done like this is 1990?" - @Javidx9
-	License
-	~~~~~~~
-	Copyright (C) 2018  Javidx9
-	This program comes with ABSOLUTELY NO WARRANTY.
-	This is free software, and you are welcome to redistribute it
-	under certain conditions; See license for details.
-	Original works located at:
-	https://www.github.com/onelonecoder
-	https://www.onelonecoder.com
-	https://www.youtube.com/javidx9
-	GNU GPLv3
-	https://github.com/OneLoneCoder/videos/blob/master/LICENSE
-	From Javidx9 :)
-	~~~~~~~~~~~~~~~
-	Hello! Ultimately I don't care what you use this for. It's intended to be
-	educational, and perhaps to the oddly minded - a little bit of fun.
-	Please hack this, change it and use it in any way you see fit. You acknowledge
-	that I am not responsible for anything bad that happens as a result of
-	your actions. However this code is protected by GNU GPLv3, see the license in the
-	github repo. This means you must attribute me if you use it. You can view this
-	license here: https://github.com/OneLoneCoder/videos/blob/master/LICENSE
-	Cheers!
-	Background
-	~~~~~~~~~~
-	Whilst waiting for TheMexicanRunner to start the finale of his NesMania project,
-	his Twitch stream had a counter counting down for a couple of hours until it started.
-	With some time on my hands, I thought it might be fun to see what the graphical
-	capabilities of the console are. Turns out, not very much, but hey, it's nice to think
-	Wolfenstein could have existed a few years earlier, and in just ~200 lines of code.
-	IMPORTANT!!!!
 	~~~~~~~~~~~~~
 	READ ME BEFORE RUNNING!!! This program expects the console dimensions to be set to
 	120 Columns by 40 Rows. I recommend a small font "Consolas" at size 16. You can do this
@@ -46,13 +14,7 @@
 	to more optimally search the map space
 	3) Add bullets!
 	4) Add bad guys!
-	Author
-	~~~~~~
-	Twitter: @javidx9
-	Blog: www.onelonecoder.com
-	Video:
-	~~~~~~
-	https://youtu.be/xW8skO7MFYw
+
 	Last Updated: 27/02/2017
 */
 
@@ -157,7 +119,7 @@ int main()
 			float fRayAngle = (fPlayerA - fFOV / 2.0f) + ((float)x / (float)nScreenWidth) * fFOV;
 
 			// Find distance to wall
-			float fStepSize = 0.1f;		  // Increment size for ray casting, decrease to increase										
+			float fStepSize = 0.1f;		  // Increment size for ray casting, decrease to increase
 			float fDistanceToWall = 0.0f; //                                      resolution
 
 			bool bHitWall = false;		// Set when ray hits wall block
@@ -166,7 +128,7 @@ int main()
 			float fEyeX = sinf(fRayAngle); // Unit vector for ray in player space
 			float fEyeY = cosf(fRayAngle);
 
-			// Incrementally cast ray from player, along ray angle, testing for 
+			// Incrementally cast ray from player, along ray angle, testing for
 			// intersection with a block
 			while (!bHitWall && fDistanceToWall < fDepth)
 			{
@@ -190,7 +152,7 @@ int main()
 
 						// To highlight tile boundaries, cast a ray from each corner
 						// of the tile, to the player. The more coincident this ray
-						// is to the rendering ray, the closer we are to a tile 
+						// is to the rendering ray, the closer we are to a tile
 						// boundary, which we'll shade to add detail to the walls
 						vector<pair<float, float>> p;
 
@@ -225,7 +187,7 @@ int main()
 
 			// Shader walls based on distance
 			short nShade = ' ';
-			if (fDistanceToWall <= fDepth / 4.0f)			nShade = 0x2588;	// Very close	
+			if (fDistanceToWall <= fDepth / 4.0f)			nShade = 0x2588;	// Very close
 			else if (fDistanceToWall < fDepth / 3.0f)		nShade = 0x2593;
 			else if (fDistanceToWall < fDepth / 2.0f)		nShade = 0x2592;
 			else if (fDistanceToWall < fDepth)				nShade = 0x2591;
