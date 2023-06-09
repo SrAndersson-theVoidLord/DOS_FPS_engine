@@ -1,0 +1,4 @@
+﻿  ConsoleApplication1.cpp
+C:\Users\Usuario\source\repos\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(214,26): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\Usuario\source\repos\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(223,17): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+  ConsoleApplication1.vcxproj -> C:\Users\Usuario\source\repos\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
